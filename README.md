@@ -1,8 +1,8 @@
 # Smart Home Energy Forecast
 
-An original, offline energy-use teaching demo. It generates deterministic
-illustrative daily usage and projects a short horizon with a moving-average
-baseline—no model downloads, meter data, or API keys.
+An energy-use forecasting teaching demo. Use deterministic illustrative daily
+usage or upload a CSV with numeric daily readings. Compare an LSTM forecaster
+with a moving-average baseline.
 
 ## Run
 
@@ -14,4 +14,7 @@ streamlit run app.py
 ```
 
 Synthetic results are not household measurements, utility forecasts, or billing
-estimates. Run tests with `python -m unittest discover -s tests -v`.
+estimates. The LSTM trains on the supplied series; no remote service is used.
+On Windows, the requirements install the moving-average baseline; use Linux or
+WSL2 to install TensorFlow and enable LSTM forecasting. Run tests with
+`python -m unittest discover -s tests -v`.

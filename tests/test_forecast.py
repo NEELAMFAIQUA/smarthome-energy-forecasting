@@ -1,6 +1,6 @@
 import unittest
 
-from forecast import forecast, mean_absolute_error, sample_daily_usage
+from forecast import forecast, lstm_forecast, mean_absolute_error, sample_daily_usage
 
 
 class ForecastTests(unittest.TestCase):
@@ -18,6 +18,8 @@ class ForecastTests(unittest.TestCase):
             forecast([], 7)
         with self.assertRaises(ValueError):
             sample_daily_usage(0)
+        with self.assertRaises(ValueError):
+            lstm_forecast([1, 2, 3], lookback=14)
 
 
 if __name__ == "__main__":
